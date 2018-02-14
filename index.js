@@ -48,6 +48,14 @@ const postMessageToChannel = function(channel_id, data) {
 		${data.link}`)
 }
 
+app.get("/", (req, res) => {
+	res.send("<h1>TOKEN-DAILY-TELEGRAM</h1>")
+})
+
+app.listen(3456, () => {
+	console.log('app is running on port 3456');
+})
+
 // main program logic
 
 setInterval(async () => {
@@ -58,8 +66,3 @@ setInterval(async () => {
 		postMessageToChannel(channel_id, latest)
 	}
 }, 10000);
-
-
-app.listen(3456, () => {
-	console.log('app is running on port 3456');
-})
